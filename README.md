@@ -917,8 +917,10 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
   > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
 
+  > You may use trailing comma in server-side (Node.js) scripts
+
     ```javascript
-    // bad
+    // bad (ok in nodejs)
     var hero = {
       firstName: 'Kevin',
       lastName: 'Flynn',
