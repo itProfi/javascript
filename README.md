@@ -1,6 +1,12 @@
-# Airbnb JavaScript Style Guide() {
+# hq Javascript Styleguide() {
 
 *A mostly reasonable approach to JavaScript*
+
+based on the Airbnb JavaScript Style Guide, changes include:
+
+  - anonymous functions: function () instead of function()
+  - if else if else: newlines and indent
+  - variable declaration: var on each line
 
 
 ## <a name='TOC'>Table of Contents</a>
@@ -47,8 +53,8 @@
     + `undefined`
 
     ```javascript
-    var foo = 1,
-        bar = foo;
+    var foo = 1;
+    var bar = foo;
 
     bar = 9;
 
@@ -61,8 +67,8 @@
     + `function`
 
     ```javascript
-    var foo = [1, 2],
-        bar = foo;
+    var foo = [1, 2];
+    var bar = foo;
 
     bar[0] = 9;
 
@@ -267,23 +273,37 @@
   - Function expressions:
 
     ```javascript
-    // anonymous function expression
-    var anonymous = function() {
+    // anonymous function expression, space between function and parantheses
+    // bad
+       var anonymous = function() {
+         return true;
+       };
+
+    // good
+    var anonymous = function () {
       return true;
     };
 
-    // named function expression
-    var named = function named() {
+    // named function expression, no space between function name and parantheses
+    // bad
+    var named = function named () {
       return true;
     };
+    // good
+    function named() {
+      return true;
+    };
+
+
 
     // immediately-invoked function expression (IIFE)
-    (function() {
+    (function () {
       console.log('Welcome to the Internet. Please follow me.');
     })();
     ```
 
   - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
+  - Crockford: If a function literal is anonymous, there should be one space between the word function and the ( (left parenthesis). If the space is omited, then it can appear that the function's name is function, which is an incorrect reading.
   - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
@@ -323,7 +343,7 @@
 
 ## <a name='properties'>Properties</a>
 
-  - Use dot notation when accessing properties.
+  - if possible Use dot notation when accessing properties.
 
     ```javascript
     var luke = {
@@ -333,9 +353,13 @@
 
     // bad
     var isJedi = luke['jedi'];
-
+    
     // good
     var isJedi = luke.jedi;
+    
+    // good
+    var prop = 'jedi';
+    var isJedi = like[prop];
     ```
 
   - Use subscript notation `[]` when accessing properties with a variable.
@@ -368,47 +392,48 @@
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration for multiple variables and declare each variable on a newline.
+  - Use one `var` declaration for each variable and declare each variable on a newline.
 
     ```javascript
-    // bad
-    var items = getItems();
-    var goSportsTeam = true;
-    var dragonball = 'z';
-
-    // good
+     // bad
     var items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
+    // good
+    var items = getItems();
+    var goSportsTeam = true;
+    var dragonball = 'z';
+    
     ```
 
   - Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
     ```javascript
     // bad
-    var i, len, dragonball,
-        items = getItems(),
-        goSportsTeam = true;
+    var i, len, dragonball;
+    var items = getItems();
+    var goSportsTeam = true;
 
     // bad
-    var i, items = getItems(),
-        dragonball,
-        goSportsTeam = true,
-        len;
+    var i;
+    var items = getItems();
+    var dragonball;
+    var goSportsTeam = true;
+    var len;
 
     // good
-    var items = getItems(),
-        goSportsTeam = true,
-        dragonball,
-        length,
-        i;
+    var items = getItems();
+    var goSportsTeam = true;
+    var dragonball;
+    var length;
+    var i;
     ```
 
   - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
 
     ```javascript
     // bad
-    function() {
+    function () {
       test();
       console.log('doing stuff..');
 
@@ -424,7 +449,7 @@
     }
 
     // good
-    function() {
+    function () {
       var name = getName();
 
       test();
@@ -440,7 +465,7 @@
     }
 
     // bad
-    function() {
+    function () {
       var name = getName();
 
       if (!arguments.length) {
@@ -451,7 +476,7 @@
     }
 
     // good
-    function() {
+    function () {
       if (!arguments.length) {
         return false;
       }
@@ -503,7 +528,7 @@
 
       anonymous(); // => TypeError anonymous is not a function
 
-      var anonymous = function() {
+      var anonymous = function () {
         console.log('anonymous function expression');
       };
     }
@@ -598,6 +623,30 @@
     }
     ```
 
+  - Use correct indentation
+
+    ```javascript
+    // bad
+    if (name !== '') {
+      // ...stuff...
+    }
+    else if (name === 'moo') {
+      // ...stuff...
+    }
+    else
+    {
+      // ...stuff...
+    }
+
+    // good
+    if (name) {
+      // ...stuff...
+    } else if (name === 'moo') {
+      // ...stuff...
+    } else {
+      // ...stuff...
+    }
+    ```
   - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
 
     **[[⬆]](#TOC)**
@@ -605,7 +654,7 @@
 
 ## <a name='blocks'>Blocks</a>
 
-  - Use braces with all multi-line blocks.
+  - Use braces with all multi-line blocks - use multi-line blocks with all braces
 
     ```javascript
     // bad
@@ -621,10 +670,10 @@
     }
 
     // bad
-    function() { return false; }
+    function example() { return false; }
 
     // good
-    function() {
+    function example() {
       return false;
     }
     ```
@@ -731,17 +780,17 @@
 
     ```javascript
     // bad
-    function() {
+    function () {
     ∙∙∙∙var name;
     }
 
     // bad
-    function() {
+    function () {
     ∙var name;
     }
 
     // good
-    function() {
+    function () {
     ∙∙var name;
     }
     ```
@@ -786,14 +835,14 @@
 
     ```javascript
     // bad
-    (function(global) {
+    (function (global) {
       // ...stuff...
     })(this);
     ```
 
     ```javascript
     // good
-    (function(global) {
+    (function (global) {
       // ...stuff...
     })(this);
 
@@ -901,19 +950,19 @@
 
     ```javascript
     // bad
-    (function() {
+    (function () {
       var name = 'Skywalker'
       return name
     })()
 
     // good
-    (function() {
+    (function () {
       var name = 'Skywalker';
       return name;
     })();
 
     // good
-    ;(function() {
+    ;(function () {
       var name = 'Skywalker';
       return name;
     })();
@@ -1055,50 +1104,41 @@
     });
     ```
 
-  - Use a leading underscore `_` when naming private properties
+
+  - When saving a reference to `this` use `that`.
 
     ```javascript
     // bad
-    this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
-
-    // good
-    this._firstName = 'Panda';
-    ```
-
-  - When saving a reference to `this` use `_this`.
-
-    ```javascript
-    // bad
-    function() {
+    function () {
       var self = this;
-      return function() {
+      return function () {
         console.log(self);
       };
     }
 
     // bad
-    function() {
-      var that = this;
-      return function() {
-        console.log(that);
+    function () {
+      var _this = this;
+      return function () {
+        console.log(_this);
       };
     }
 
     // good
-    function() {
-      var _this = this;
-      return function() {
-        console.log(_this);
+    function () {
+      var that = this;
+      return function () {
+        console.log(that);
       };
     }
+
     ```
 
   - Name your functions. This is helpful for stack traces.
 
     ```javascript
     // bad
-    var log = function(msg) {
+    var log = function (msg) {
       console.log(msg);
     };
 
@@ -1153,11 +1193,11 @@
       this.set('lightsaber', lightsaber);
     }
 
-    Jedi.prototype.set = function(key, val) {
+    Jedi.prototype.set = function (key, val) {
       this[key] = val;
     };
 
-    Jedi.prototype.get = function(key) {
+    Jedi.prototype.get = function (key) {
       return this[key];
     };
     ```
@@ -1199,12 +1239,12 @@
 
     ```javascript
     // bad
-    Jedi.prototype.jump = function() {
+    Jedi.prototype.jump = function () {
       this.jumping = true;
       return true;
     };
 
-    Jedi.prototype.setHeight = function(height) {
+    Jedi.prototype.setHeight = function (height) {
       this.height = height;
     };
 
@@ -1213,12 +1253,12 @@
     luke.setHeight(20) // => undefined
 
     // good
-    Jedi.prototype.jump = function() {
+    Jedi.prototype.jump = function () {
       this.jumping = true;
       return this;
     };
 
-    Jedi.prototype.setHeight = function(height) {
+    Jedi.prototype.setHeight = function (height) {
       this.height = height;
       return this;
     };
@@ -1505,6 +1545,7 @@
   - :fr: **French**: [nmussy/javascript-style-guide](https://github.com/nmussy/javascript-style-guide)
   - :ru: **Russian**: [uprock/javascript](https://github.com/uprock/javascript)
   - :bg: **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
+
 
 ## <a name='guide-guide'>The JavaScript Style Guide Guide</a>
 
