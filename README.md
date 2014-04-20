@@ -351,10 +351,10 @@ based on the Airbnb JavaScript Style Guide, changes include:
       age: 28
     };
 
-    // bad
+    // good - no problems with minimizers/obfuscators
     var isJedi = luke['jedi'];
     
-    // good
+    // ok - take care with minimizers/obfuscators!
     var isJedi = luke.jedi;
     
     // good
@@ -395,11 +395,11 @@ based on the Airbnb JavaScript Style Guide, changes include:
   - Use one `var` declaration for each variable and declare each variable on a newline.
 
     ```javascript
-     // bad
+     // ok
     var items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
-    // good
+    // better
     var items = getItems();
     var goSportsTeam = true;
     var dragonball = 'z';
@@ -1139,12 +1139,12 @@ based on the Airbnb JavaScript Style Guide, changes include:
   - Name your functions. This is helpful for stack traces.
 
     ```javascript
-    // bad
+    // ok
     var log = function (msg) {
       console.log(msg);
     };
 
-    // good
+    // better
     var log = function log(msg) {
       console.log(msg);
     };
