@@ -4,10 +4,9 @@
 
 based on the Airbnb JavaScript Style Guide, changes include:
 
-  - anonymous functions: function () instead of function()
-  - if else if else: newlines and indent
-  - variable declaration: var on each line
-
+- anonymous functions: function () instead of function()
+- if else if else: newlines and indent
+- variable declaration: var on each line
 
 ## <a name='TOC'>Table of Contents</a>
 
@@ -44,13 +43,13 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
 ## <a name='types'>Types</a>
 
-  - **Primitives**: When you access a primitive type you work directly on its value
+- **Primitives**: When you access a primitive type you work directly on its value
 
-    + `string`
-    + `number`
-    + `boolean`
-    + `null`
-    + `undefined`
+  - `string`
+  - `number`
+  - `boolean`
+  - `null`
+  - `undefined`
 
     ```javascript
     var foo = 1;
@@ -60,11 +59,12 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **Complex**: When you access a complex type you work on a reference to its value
 
-    + `object`
-    + `array`
-    + `function`
+- **Complex**: When you access a complex type you work on a reference to its value
+
+  - `object`
+  - `array`
+  - `function`
 
     ```javascript
     var foo = [1, 2];
@@ -79,7 +79,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
 ## <a name='objects'>Objects</a>
 
-  - Use the literal syntax for object creation.
+- Use the literal syntax for object creation.
 
     ```javascript
     // bad
@@ -89,7 +89,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     var item = {};
     ```
 
-  - Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61)
+- Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61)
 
     ```javascript
     // bad
@@ -105,7 +105,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     };
     ```
 
-  - Use readable synonyms in place of reserved words.
+- Use readable synonyms in place of reserved words.
 
     ```javascript
     // bad
@@ -123,11 +123,12 @@ based on the Airbnb JavaScript Style Guide, changes include:
       type: 'alien'
     };
     ```
+
     **[[⬆]](#TOC)**
 
 ## <a name='arrays'>Arrays</a>
 
-  - Use the literal syntax for array creation
+- Use the literal syntax for array creation
 
     ```javascript
     // bad
@@ -137,7 +138,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     var items = [];
     ```
 
-  - If you don't know array length use Array#push.
+- If you don't know array length use Array#push.
 
     ```javascript
     var someStack = [];
@@ -150,7 +151,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     someStack.push('abracadabra');
     ```
 
-  - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+- When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
@@ -166,7 +167,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     itemsCopy = items.slice();
     ```
 
-  - To convert an array-like object to an array, use Array#slice.
+- To convert an array-like object to an array, use Array#slice.
 
     ```javascript
     function trigger() {
@@ -177,10 +178,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
     **[[⬆]](#TOC)**
 
-
 ## <a name='strings'>Strings</a>
 
-  - Use single quotes `''` for strings
+- Use single quotes `''` for strings
 
     ```javascript
     // bad
@@ -196,8 +196,8 @@ based on the Airbnb JavaScript Style Guide, changes include:
     var fullName = 'Bob ' + this.lastName;
     ```
 
-  - Strings longer than 80 characters should be written across multiple lines using string concatenation.
-  - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
+- Strings longer than 80 characters should be written across multiple lines using string concatenation.
+- Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
 
     ```javascript
     // bad
@@ -221,7 +221,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
       'fast.';
     ```
 
-  - When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
+- When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
 
     ```javascript
     var items,
@@ -267,10 +267,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
     **[[⬆]](#TOC)**
 
-
 ## <a name='functions'>Functions</a>
 
-  - Function expressions:
+- Function expressions:
 
     ```javascript
     // anonymous function expression, space between function and parantheses
@@ -302,9 +301,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
     })();
     ```
 
-  - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
-  - Crockford: If a function literal is anonymous, there should be one space between the word function and the ( (left parenthesis). If the space is omited, then it can appear that the function's name is function, which is an incorrect reading.
-  - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+- Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
+- Crockford: If a function literal is anonymous, there should be one space between the word function and the ( (left parenthesis). If the space is omited, then it can appear that the function's name is function, which is an incorrect reading.
+- **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // bad
@@ -323,7 +322,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Never name a parameter `arguments`, this will take precedence over the `arguments` object that is given to every function scope.
+- Never name a parameter `arguments`, this will take precedence over the `arguments` object that is given to every function scope.
 
     ```javascript
     // bad
@@ -339,11 +338,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
     **[[⬆]](#TOC)**
 
-
-
 ## <a name='properties'>Properties</a>
 
-  - if possible Use dot notation when accessing properties.
+- if possible Use dot notation when accessing properties.
 
     ```javascript
     var luke = {
@@ -362,7 +359,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     var isJedi = like[prop];
     ```
 
-  - Use subscript notation `[]` when accessing properties with a variable.
+- Use subscript notation `[]` when accessing properties with a variable.
 
     ```javascript
     var luke = {
@@ -379,10 +376,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
     **[[⬆]](#TOC)**
 
-
 ## <a name='variables'>Variables</a>
 
-  - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+- Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
 
     ```javascript
     // bad
@@ -392,7 +388,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration for each variable and declare each variable on a newline.
+- Use one `var` declaration for each variable and declare each variable on a newline.
 
     ```javascript
      // ok
@@ -406,7 +402,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     
     ```
 
-  - Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+- Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
     ```javascript
     // bad
@@ -429,7 +425,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     var i;
     ```
 
-  - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+- Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
 
     ```javascript
     // bad
@@ -489,10 +485,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
     **[[⬆]](#TOC)**
 
-
 ## <a name='hoisting'>Hoisting</a>
 
-  - Variable declarations get hoisted to the top of their scope, their assignment does not.
+- Variable declarations get hoisted to the top of their scope, their assignment does not.
 
     ```javascript
     // we know this wouldn't work (assuming there
@@ -520,7 +515,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Anonymous function expressions hoist their variable name, but not the function assignment.
+- Anonymous function expressions hoist their variable name, but not the function assignment.
 
     ```javascript
     function example() {
@@ -534,7 +529,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Named function expressions hoist the variable name, not the function name or the function body.
+- Named function expressions hoist the variable name, not the function name or the function body.
 
     ```javascript
     function example() {
@@ -562,7 +557,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Function declarations hoist their name and the function body.
+- Function declarations hoist their name and the function body.
 
     ```javascript
     function example() {
@@ -574,23 +569,21 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/)
+- For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/)
 
     **[[⬆]](#TOC)**
 
-
-
 ## <a name='conditionals'>Conditional Expressions & Equality</a>
 
-  - Use `===` and `!==` over `==` and `!=`.
-  - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
+- Use `===` and `!==` over `==` and `!=`.
+- Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
 
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+  - **Objects** evaluate to **true**
+  - **Undefined** evaluates to **false**
+  - **Null** evaluates to **false**
+  - **Booleans** evaluate to **the value of the boolean**
+  - **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
+  - **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
 
     ```javascript
     if ([0]) {
@@ -599,7 +592,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Use shortcuts.
+- Use shortcuts.
 
     ```javascript
     // bad
@@ -623,7 +616,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Use correct indentation
+- Use correct indentation
 
     ```javascript
     // bad
@@ -647,14 +640,14 @@ based on the Airbnb JavaScript Style Guide, changes include:
       // ...stuff...
     }
     ```
-  - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
+
+- For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
 
     **[[⬆]](#TOC)**
 
-
 ## <a name='blocks'>Blocks</a>
 
-  - Use braces with all multi-line blocks - use multi-line blocks with all braces
+- Use braces with all multi-line blocks - use multi-line blocks with all braces
 
     ```javascript
     // bad
@@ -680,10 +673,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
     **[[⬆]](#TOC)**
 
-
 ## <a name='comments'>Comments</a>
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+- Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
 
     ```javascript
     // bad
@@ -715,7 +707,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
+- Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
 
     ```javascript
     // bad
@@ -745,9 +737,9 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+- Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
 
-  - Use `// FIXME:` to annotate problems
+- Use `// FIXME:` to annotate problems
 
     ```javascript
     function Calculator() {
@@ -759,7 +751,7 @@ based on the Airbnb JavaScript Style Guide, changes include:
     }
     ```
 
-  - Use `// TODO:` to annotate solutions to problems
+- Use `// TODO:` to annotate solutions to problems
 
     ```javascript
     function Calculator() {
@@ -769,9 +761,12 @@ based on the Airbnb JavaScript Style Guide, changes include:
 
       return this;
     }
+
   ```
 
     **[[⬆]](#TOC)**
+
+    
 
 
 ## <a name='whitespace'>Whitespace</a>
