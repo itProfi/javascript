@@ -1,4 +1,4 @@
-![Logo](admin/sql.png)
+![Logo](sql.png)
 # ioBroker.sql
 
 ![Number of Installations](http://iobroker.live/badges/sql-installed.svg) ![Number of Installations](http://iobroker.live/badges/sql-stable.svg) [![NPM version](http://img.shields.io/npm/v/iobroker.sql.svg)](https://www.npmjs.com/package/iobroker.sql)
@@ -63,7 +63,7 @@ On the "windows" it can be easily installed via installer: https://dev.mysql.com
 
 Pay attention for authentication method. The new encryption algorithm in MySQL 8.0 is not yet supported by `node.js` and you must select legacy authentication method.
 
-![Windows](img/WindowsMySQLinstaller.png)
+![Windows](WindowsMySQLinstaller.png)
 
 ## Structure of the DBs
 Default Database name is "iobroker", but it can be changed in the configuration.
