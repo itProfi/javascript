@@ -710,10 +710,9 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='whitespace'>Пробелы</a>
 
-  - Используйте программную табуляцию (ее поддерживают все современные редакторы кода и IDE) из двух пробелов.
+- Используйте программную табуляцию (ее поддерживают все современные редакторы кода и IDE) из двух пробелов.
 
     ```javascript
     // плохо
@@ -731,7 +730,8 @@
     ∙∙var name;
     }
     ```
-  - Устанавливайте один пробел перед открывающей скобкой.
+
+- Устанавливайте один пробел перед открывающей скобкой.
 
     ```javascript
     // плохо
@@ -756,7 +756,8 @@
       breed: 'Bernese Mountain Dog'
     });
     ```
-  - Оставляйте новую строку в конце файла.
+
+- Оставляйте новую строку в конце файла.
 
     ```javascript
     // плохо
@@ -773,7 +774,7 @@
 
     ```
 
-  - Используйте отступы, когда делаете цепочки вызовов.
+- Используйте отступы, когда делаете цепочки вызовов.
 
     ```javascript
     // плохо
@@ -808,7 +809,7 @@
 
 ## <a name='commas'>Запятые</a>
 
-  - Запятые в начале строки: **Нет.**
+- Запятые в начале строки: **Нет.**
 
     ```javascript
     // плохо
@@ -838,7 +839,7 @@
     };
     ```
 
-  - Дополнительная запятая в конце объектов: **Нет**. Она способна вызвать проблемы с IE6/7 и IE9 в режиме совместимости. В некоторых реализациях ES3 запятая в конце массива увеличивает его длину на 1, что может вызвать проблемы. Этот вопрос был прояснен только в ES5 ([оригинал](http://es5.github.io/#D)):
+- Дополнительная запятая в конце объектов: **Нет**. Она способна вызвать проблемы с IE6/7 и IE9 в режиме совместимости. В некоторых реализациях ES3 запятая в конце массива увеличивает его длину на 1, что может вызвать проблемы. Этот вопрос был прояснен только в ES5 ([оригинал](http://es5.github.io/#D)):
 
   > Редакция ECMAScript 5 однозначно устанавливает факт, что запятая в конце ArrayInitialiser не должна увеличивать длину массива. Это несемантическое изменение от Редакции ECMAScript 3, но некоторые реализации до этого некорректно разрешали этот вопрос.
 
@@ -868,10 +869,9 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='semicolons'>Точки с запятой</a>
 
-  - **Да.**
+- **Да.**
 
     ```javascript
     // плохо
@@ -895,11 +895,10 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='type-coercion'>Приведение типов</a>
 
-  - Выполняйте приведение типов в начале операции, но не делайте его избыточным.
-  - Строки:
+- Выполняйте приведение типов в начале операции, но не делайте его избыточным.
+- Строки:
 
     ```javascript
     //  => this.reviewScore = 9;
@@ -917,7 +916,7 @@
     var totalScore = this.reviewScore + ' итого';
     ```
 
-  - Используйте `parseInt` для чисел и всегда указывайте основание для приведения типов.
+- Используйте `parseInt` для чисел и всегда указывайте основание для приведения типов.
 
     ```javascript
     var inputValue = '4';
@@ -941,7 +940,7 @@
     var val = parseInt(inputValue, 10);
     ```
 
-  - Если по какой-либо причине вы делаете что-то дикое, и именно на `parseInt` тратится больше всего ресурсов, используйте побитовый сдвиг [из соображений быстродействия](http://jsperf.com/coercion-vs-casting/3), но обязательно оставьте комментарий с объяснением причин.
+- Если по какой-либо причине вы делаете что-то дикое, и именно на `parseInt` тратится больше всего ресурсов, используйте побитовый сдвиг [из соображений быстродействия](http://jsperf.com/coercion-vs-casting/3), но обязательно оставьте комментарий с объяснением причин.
 
     ```javascript
     // хорошо
@@ -953,7 +952,7 @@
     var val = inputValue >> 0;
     ```
 
-  - **Примечание:** Будьте осторожны с побитовыми операциями. Числа в JavaScript являются [64-битными значениями](http://es5.github.io/#x4.3.19), но побитовые операции всегда возвращают 32-битные значенения. [Источник](http://es5.github.io/#x11.7). Побитовые операции над числами, значение которых выходит за 32 бита (верхний предел: 2,147,483,647).
+- **Примечание:** Будьте осторожны с побитовыми операциями. Числа в JavaScript являются [64-битными значениями](http://es5.github.io/#x4.3.19), но побитовые операции всегда возвращают 32-битные значенения. [Источник](http://es5.github.io/#x11.7). Побитовые операции над числами, значение которых выходит за 32 бита (верхний предел: 2,147,483,647).
 
     ```
     2147483647 >> 0 //=> 2147483647
@@ -961,7 +960,7 @@
     2147483649 >> 0 //=> -2147483647
     ```
 
-  - логические типы(Boolean):
+- логические типы(Boolean):
 
     ```javascript
     var age = 0;
@@ -978,10 +977,9 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='naming-conventions'>Соглашение об именовании</a>
 
-  - Избегайте однобуквенных имен функций. Имена должны давать представление о том, что делает эта функция.
+- Избегайте однобуквенных имен функций. Имена должны давать представление о том, что делает эта функция.
 
     ```javascript
     // плохо
@@ -995,7 +993,7 @@
     }
     ```
 
-  - Используйте camelCase для именования объектов, функций и переменных.
+- Используйте camelCase для именования объектов, функций и переменных.
 
     ```javascript
     // плохо
@@ -1014,7 +1012,7 @@
     });
     ```
 
-  - Используйте PascalCase для именования конструкторов классов
+- Используйте PascalCase для именования конструкторов классов
 
     ```javascript
     // плохо
@@ -1036,7 +1034,7 @@
     });
     ```
 
-  - Используйте подчеркивание `_` в качестве префикса для именования внутренних методов и переменных объекта.
+- Используйте подчеркивание `_` в качестве префикса для именования внутренних методов и переменных объекта.
 
     ```javascript
     // плохо
@@ -1047,7 +1045,7 @@
     this._firstName = 'Panda';
     ```
 
-  - Создавая ссылку на `this`, используйте `_this`.
+- Создавая ссылку на `this`, используйте `_this`.
 
     ```javascript
     // плохо
@@ -1075,7 +1073,7 @@
     }
     ```
 
-  - Задавайте имена для функций. Это повышает читаемость сообщений об ошибках кода.
+- Задавайте имена для функций. Это повышает читаемость сообщений об ошибках кода.
 
     ```javascript
     // плохо
@@ -1091,11 +1089,10 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='accessors'>Геттеры и сеттеры: функции для доступа к значениям объекта</a>
 
-  - Функции универсального доступа к свойствам не требуются
-  - Если вам необходимо создать функцию для доступа к переменной, используйте раздельные функции getVal() и setVal('hello')
+- Функции универсального доступа к свойствам не требуются
+- Если вам необходимо создать функцию для доступа к переменной, используйте раздельные функции getVal() и setVal('hello')
 
     ```javascript
     // плохо
@@ -1111,7 +1108,7 @@
     dragon.setAge(25);
     ```
 
-  - Если свойство является логическим(boolean), используйте isVal() или hasVal()
+- Если свойство является логическим(boolean), используйте isVal() или hasVal()
 
     ```javascript
     // плохо
@@ -1125,7 +1122,7 @@
     }
     ```
 
-  - Вы можете создавать функции get() и set(), но будьте логичны и последовательны – то есть не добавляйте свойства, которые не могут быть изменены через эти функции.
+- Вы можете создавать функции get() и set(), но будьте логичны и последовательны – то есть не добавляйте свойства, которые не могут быть изменены через эти функции.
 
     ```javascript
     function Jedi(options) {
@@ -1145,10 +1142,9 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='constructors'>Конструкторы</a>
 
-  - Присваивайте метод прототипу вместо замены прототипа на другой объект. Замена прототипа на другой объект делает наследование невозможным.
+- Присваивайте метод прототипу вместо замены прототипа на другой объект. Замена прототипа на другой объект делает наследование невозможным.
 
     ```javascript
     function Jedi() {
@@ -1176,7 +1172,7 @@
     };
     ```
 
-  - Методы могут возвращать `this` для создания цепочек вызовов. Но стоит оставаться последовательным и обеспечить одинаковое поведение для всех методов, кроме геттеров.
+- Методы могут возвращать `this` для создания цепочек вызовов. Но стоит оставаться последовательным и обеспечить одинаковое поведение для всех методов, кроме геттеров.
 
     ```javascript
     // плохо
@@ -1210,8 +1206,7 @@
       .setHeight(20);
     ```
 
-
-  - Вы можете заменить стандартный метод toString(), но убедитесь, что он работает и не вызывает побочных эффектов.
+- Вы можете заменить стандартный метод toString(), но убедитесь, что он работает и не вызывает побочных эффектов.
 
     ```javascript
     function Jedi(options) {
@@ -1230,10 +1225,9 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='events'>События</a>
 
-  - Подключая набор данных к событиям (как DOM-событиям, так и js-событиям, например, в Backbone), передавайте объект вместо простой переменной. Это позволяет в процессе всплытия событий добавлять к данному объекту дополнительную информацию.
+- Подключая набор данных к событиям (как DOM-событиям, так и js-событиям, например, в Backbone), передавайте объект вместо простой переменной. Это позволяет в процессе всплытия событий добавлять к данному объекту дополнительную информацию.
 
     ```js
     // плохо
@@ -1262,13 +1256,12 @@
 
   **[[⬆]](#Оглавление)**
 
-
 ## <a name='modules'>Модули</a>
 
-  - Модуль должен начинаться с `!`. За счет этого даже некорректно сформированный модуль, в конце которого отсутствует точка с запятой, не вызовет ошибок при автоматической сборке скриптов. [Объяснение](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
-  - Файл должен быть именован с camelCase, находиться в папке с тем же именем, и совпадать с именем экспортируемой переменной.
-  - Добавьте метод noConflict(), устанавливающий экспортируемый модуль в состояние предыдущей версии.
-  - Всегда объявляйте `'use strict';` в начале модуля.
+- Модуль должен начинаться с `!`. За счет этого даже некорректно сформированный модуль, в конце которого отсутствует точка с запятой, не вызовет ошибок при автоматической сборке скриптов. [Объяснение](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
+- Файл должен быть именован с camelCase, находиться в папке с тем же именем, и совпадать с именем экспортируемой переменной.
+- Добавьте метод noConflict(), устанавливающий экспортируемый модуль в состояние предыдущей версии.
+- Всегда объявляйте `'use strict';` в начале модуля.
 
     ```javascript
     // fancyInput/fancyInput.js
@@ -1293,10 +1286,9 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='jquery'>jQuery</a>
 
-  - Для jQuery-переменных используйте префикс `$`.
+- Для jQuery-переменных используйте префикс `$`.
 
     ```javascript
     // плохо
@@ -1306,7 +1298,7 @@
     var $sidebar = $('.sidebar');
     ```
 
-  - Кэшируйте jQuery-запросы. Каждый новый jQuery-запрос делает повторный поиск по DOM-дереву, и приложение начинает работать медленнее.
+- Кэшируйте jQuery-запросы. Каждый новый jQuery-запрос делает повторный поиск по DOM-дереву, и приложение начинает работать медленнее.
 
     ```javascript
     // плохо
@@ -1333,8 +1325,8 @@
     }
     ```
 
-  - Для DOM-запросов используйте классический каскадный CSS-синтаксис `$('.sidebar ul')` или родитель > потомок `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
-  - Используйте `find` для поиска внутри DOM-объекта.
+- Для DOM-запросов используйте классический каскадный CSS-синтаксис `$('.sidebar ul')` или родитель > потомок `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+- Используйте `find` для поиска внутри DOM-объекта.
 
     ```javascript
     // плохо
@@ -1355,17 +1347,15 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='es5'>Совместимость ECMAScript 5</a>
 
-  - Опирайтесь на [таблицу совместимости](http://kangax.github.com/es5-compat-table/) с ES5 от [Kangax](https://twitter.com/kangax/)
+- Опирайтесь на [таблицу совместимости](http://kangax.github.com/es5-compat-table/) с ES5 от [Kangax](https://twitter.com/kangax/)
 
   **[[⬆]](#Оглавление)**
 
-
 ## <a name='testing'>Тестирование</a>
 
-  - **Да.**
+- **Да.**
 
     ```javascript
     function() {
@@ -1375,73 +1365,70 @@
 
     **[[⬆]](#Оглавление)**
 
-
 ## <a name='performance'>Быстродействие</a>
 
-  - [On Layout & Web Performance](http://kellegous.com/j/2013/01/26/layout-performance/)
-  - [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
-  - [Try/Catch Cost In a Loop](http://jsperf.com/try-catch-in-loop-cost)
-  - [Bang Function](http://jsperf.com/bang-function)
-  - [jQuery Find vs Context, Selector](http://jsperf.com/jquery-find-vs-context-sel/13)
-  - [innerHTML vs textContent for script text](http://jsperf.com/innerhtml-vs-textcontent-for-script-text)
-  - [Long String Concatenation](http://jsperf.com/ya-string-concat)
-  - В процессе наполнения...
+- [On Layout & Web Performance](http://kellegous.com/j/2013/01/26/layout-performance/)
+- [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
+- [Try/Catch Cost In a Loop](http://jsperf.com/try-catch-in-loop-cost)
+- [Bang Function](http://jsperf.com/bang-function)
+- [jQuery Find vs Context, Selector](http://jsperf.com/jquery-find-vs-context-sel/13)
+- [innerHTML vs textContent for script text](http://jsperf.com/innerhtml-vs-textcontent-for-script-text)
+- [Long String Concatenation](http://jsperf.com/ya-string-concat)
+- В процессе наполнения...
 
   **[[⬆]](#Оглавление)**
 
-
 ## <a name='resources'>Ресурсы</a>
-
 
 **Прочитайте это**
 
-  - [Annotated ECMAScript 5.1](http://es5.github.com/)
+- [Annotated ECMAScript 5.1](http://es5.github.com/)
 
 **Другие руководства по стилю**
 
-  - [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
-  - [jQuery Core Style Guidelines](http://docs.jquery.com/JQuery_Core_Style_Guidelines)
-  - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
+- [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+- [jQuery Core Style Guidelines](http://docs.jquery.com/JQuery_Core_Style_Guidelines)
+- [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
 
 **Другие стили**
 
-  - [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
-  - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52)
-  - [Popular JavaScript Coding Conventions on Github](http://sideeffect.kr/popularconvention/#javascript)
+- [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
+- [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52)
+- [Popular JavaScript Coding Conventions on Github](http://sideeffect.kr/popularconvention/#javascript)
 
 **Дальнейшее прочтение**
 
-  - [Understanding JavaScript Closures](http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
-  - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
+- [Understanding JavaScript Closures](http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
+- [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
 
 **Книги**
 
-  - [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
-  - [JavaScript Patterns](http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
-  - [Pro JavaScript Design Patterns](http://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X)  - Ross Harmes and Dustin Diaz
-  - [High Performance Web Sites: Essential Knowledge for Front-End Engineers](http://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309) - Steve Souders
-  - [Maintainable JavaScript](http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680) - Nicholas C. Zakas
-  - [JavaScript Web Applications](http://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X) - Alex MacCaw
-  - [Pro JavaScript Techniques](http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273) - John Resig
-  - [Smashing Node.js: JavaScript Everywhere](http://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595) - Guillermo Rauch
-  - [Secrets of the JavaScript Ninja](http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X) - John Resig and Bear Bibeault
-  - [Human JavaScript](http://humanjavascript.com/) - Henrik Joreteg
-  - [Superhero.js](http://superherojs.com/) - Kim Joar Bekkelund, Mads Mobæk, & Olav Bjorkoy
-  - [JSBooks](http://jsbooks.revolunet.com/)
+- [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
+- [JavaScript Patterns](http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
+- [Pro JavaScript Design Patterns](http://www.amazon.com/JavaScript-Design-Patterns-Recipes-Problem-Solution/dp/159059908X)  - Ross Harmes and Dustin Diaz
+- [High Performance Web Sites: Essential Knowledge for Front-End Engineers](http://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309) - Steve Souders
+- [Maintainable JavaScript](http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680) - Nicholas C. Zakas
+- [JavaScript Web Applications](http://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X) - Alex MacCaw
+- [Pro JavaScript Techniques](http://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273) - John Resig
+- [Smashing Node.js: JavaScript Everywhere](http://www.amazon.com/Smashing-Node-js-JavaScript-Everywhere-Magazine/dp/1119962595) - Guillermo Rauch
+- [Secrets of the JavaScript Ninja](http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X) - John Resig and Bear Bibeault
+- [Human JavaScript](http://humanjavascript.com/) - Henrik Joreteg
+- [Superhero.js](http://superherojs.com/) - Kim Joar Bekkelund, Mads Mobæk, & Olav Bjorkoy
+- [JSBooks](http://jsbooks.revolunet.com/)
 
 **Блоги**
 
-  - [DailyJS](http://dailyjs.com/)
-  - [JavaScript Weekly](http://javascriptweekly.com/)
-  - [JavaScript, JavaScript...](http://javascriptweblog.wordpress.com/)
-  - [Bocoup Weblog](http://weblog.bocoup.com/)
-  - [Adequately Good](http://www.adequatelygood.com/)
-  - [NCZOnline](http://www.nczonline.net/)
-  - [Perfection Kills](http://perfectionkills.com/)
-  - [Ben Alman](http://benalman.com/)
-  - [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
-  - [Dustin Diaz](http://dustindiaz.com/)
-  - [nettuts](http://net.tutsplus.com/?s=javascript)
+- [DailyJS](http://dailyjs.com/)
+- [JavaScript Weekly](http://javascriptweekly.com/)
+- [JavaScript, JavaScript...](http://javascriptweblog.wordpress.com/)
+- [Bocoup Weblog](http://weblog.bocoup.com/)
+- [Adequately Good](http://www.adequatelygood.com/)
+- [NCZOnline](http://www.nczonline.net/)
+- [Perfection Kills](http://perfectionkills.com/)
+- [Ben Alman](http://benalman.com/)
+- [Dmitry Baranovskiy](http://dmitry.baranovskiy.com/)
+- [Dustin Diaz](http://dustindiaz.com/)
+- [nettuts](http://net.tutsplus.com/?s=javascript)
 
   **[[⬆]](#Оглавление)**
 
@@ -1449,37 +1436,37 @@
 
   Вот неполный список организаций, которые опираются на оригинальное руководство от AirBnB. Если вы собираетесь использовать это переведенное руководство, сделайте pull request, и мы сможем начать отдельный список компаний, использующих данный перевод.
 
-  - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
-  - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
-  - **American Insitutes for Research**: [AIRAST/javascript](https://github.com/AIRAST/javascript)
-  - **Compass Learning**: [compasslearning/javascript-style-guide](https://github.com/compasslearning/javascript-style-guide)
-  - **ExactTarget**: [ExactTarget/javascript](https://github.com/ExactTarget/javascript)
-  - **Gawker Media**: [gawkermedia/javascript](https://github.com/gawkermedia/javascript)
-  - **GeneralElectric**: [GeneralElectric/javascript](https://github.com/GeneralElectric/javascript)
-  - **GoodData**: [gooddata/gdc-js-style](https://github.com/gooddata/gdc-js-style)
-  - **Grooveshark**: [grooveshark/javascript](https://github.com/grooveshark/javascript)
-  - **How About We**: [howaboutwe/javascript](https://github.com/howaboutwe/javascript)
-  - **Mighty Spring**: [mightyspring/javascript](https://github.com/mightyspring/javascript)
-  - **MinnPost**: [MinnPost/javascript](https://github.com/MinnPost/javascript)
-  - **ModCloth**: [modcloth/javascript](https://github.com/modcloth/javascript)
-  - **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
-  - **National Park Service**: [nationalparkservice/javascript](https://github.com/nationalparkservice/javascript)
-  - **Razorfish**: [razorfish/javascript-style-guide](https://github.com/razorfish/javascript-style-guide)
-  - **Shutterfly**: [shutterfly/javascript](https://github.com/shutterfly/javascript)
-  - **Userify**: [userify/javascript](https://github.com/userify/javascript)
-  - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
-  - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
+- **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
+- **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
+- **American Insitutes for Research**: [AIRAST/javascript](https://github.com/AIRAST/javascript)
+- **Compass Learning**: [compasslearning/javascript-style-guide](https://github.com/compasslearning/javascript-style-guide)
+- **ExactTarget**: [ExactTarget/javascript](https://github.com/ExactTarget/javascript)
+- **Gawker Media**: [gawkermedia/javascript](https://github.com/gawkermedia/javascript)
+- **GeneralElectric**: [GeneralElectric/javascript](https://github.com/GeneralElectric/javascript)
+- **GoodData**: [gooddata/gdc-js-style](https://github.com/gooddata/gdc-js-style)
+- **Grooveshark**: [grooveshark/javascript](https://github.com/grooveshark/javascript)
+- **How About We**: [howaboutwe/javascript](https://github.com/howaboutwe/javascript)
+- **Mighty Spring**: [mightyspring/javascript](https://github.com/mightyspring/javascript)
+- **MinnPost**: [MinnPost/javascript](https://github.com/MinnPost/javascript)
+- **ModCloth**: [modcloth/javascript](https://github.com/modcloth/javascript)
+- **National Geographic**: [natgeo/javascript](https://github.com/natgeo/javascript)
+- **National Park Service**: [nationalparkservice/javascript](https://github.com/nationalparkservice/javascript)
+- **Razorfish**: [razorfish/javascript-style-guide](https://github.com/razorfish/javascript-style-guide)
+- **Shutterfly**: [shutterfly/javascript](https://github.com/shutterfly/javascript)
+- **Userify**: [userify/javascript](https://github.com/userify/javascript)
+- **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
+- **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
 ## <a name='translation'>Переводы</a>
 
   Это руководство так же переведено на:
 
-  - :de: **Немецкий**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
-  - :jp: **Японский**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
-  - :br: **Португальский**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
-  - :cn: **Китайский**: [adamlu/javascript-style-guide](https://github.com/adamlu/javascript-style-guide)
-  - :es: **Испанский**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
-  - :kr: **Корейский**: [tipjs/javascript-style-guide](https://github.com/tipjs/javascript-style-guide)
+- :de: **Немецкий**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
+- :jp: **Японский**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
+- :br: **Португальский**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
+- :cn: **Китайский**: [adamlu/javascript-style-guide](https://github.com/adamlu/javascript-style-guide)
+- :es: **Испанский**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
+- :kr: **Корейский**: [tipjs/javascript-style-guide](https://github.com/tipjs/javascript-style-guide)
 
 ## <a name='license'>Лицензия</a>
 
