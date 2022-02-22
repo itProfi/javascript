@@ -1572,4 +1572,3 @@ It is because the adapter does not have the value of state in RAM and must ask c
 There is a possibility to enabled and disable scripts via states. For every script the state will be created with name **javascript.INSTANCE.scriptEnabled.SCRIPT_NAME**.
 Scripts can be activated and deactivated by controlling of this state with ack=false.
 
-
