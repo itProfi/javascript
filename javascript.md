@@ -130,7 +130,7 @@ To use other modules, enter the name (and version) of the module in the instance
 ```js
 console.sev(msg);
 ```
-Message is a string and sev is one of the following: 'debug', 'info', 'warn', 'error'.
+Message is a string and sev is one of the following: 'info', 'warn', 'error'.
 Default severity is ***'info'***
 
 ### exec - execute some OS command, like `cp file1 file2`
